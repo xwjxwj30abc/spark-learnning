@@ -1,3 +1,4 @@
 .idea/
 spark-learnning.iml
 target/
+src/main/resources/
