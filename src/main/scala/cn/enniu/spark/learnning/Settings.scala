@@ -1,6 +1,7 @@
 package cn.enniu.spark.learnning
 
 import cn.enniu.spark.learnning.dao.MongoDao
+import cn.enniu.spark.learnning.service.DataCollectionService
 import com.typesafe.config.{Config, ConfigFactory}
 import org.slf4j.LoggerFactory
 
@@ -32,8 +33,12 @@ object Settings {
 
 
   def main(args: Array[String]): Unit = {
-    val mongo = new MongoDao()
-    println(mongo.queryLabelById("labelId", 3, "personas_label"))
+
+    val s = new DataCollectionService()
+    println(s.readMongo(3))
+
+    //    val mongo = new MongoDao()
+    //    println(mongo.queryLabelById("labelId", 3, "personas_label"))
   }
 
 }
